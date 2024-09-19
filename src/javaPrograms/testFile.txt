@@ -14,3 +14,41 @@ This is for testing purpose...
 This is for testing purpose...
 This is for testing purpose...
 This is for testing purpose...
+using System;
+using System.Collections.Generic;
+
+
+
+class Program
+{
+    static void Main()
+    {
+        CompleteFamily cf=new CompleteFamily();
+        int noOfInput=int.Parse(Console.ReadLine());
+        
+        for(int i =0;i<noOfInput;i++)
+        {
+            string role=Console.ReadLine();
+            if(role=="child"){
+                string name=Console.ReadLine();
+                int age=int.Parse(Console.ReadLine());
+                string healthStatus=Console.ReadLine();
+                child ch=new child(name,age,healthStatus);
+                cf.AddFamily(ch);
+            }
+            else if(role=="Parent")
+            {
+                string name=Console.ReadLine();
+                int age=int.Parse(Console.ReadLine());
+                string healthStatus=Console.ReadLine();
+                Parent Pt=new Parent(name,age,healthStatus);
+                cf.AddFamily(Pt);
+                
+            }
+           
+            
+            
+        }
+        cf.StimulatetheFamilyDetails();
+    }
+}
